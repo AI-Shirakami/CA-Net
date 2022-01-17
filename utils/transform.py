@@ -160,7 +160,7 @@ class resize(object):
         Returns:
             PIL Image: Rescaled image and mask.
         """
-        return TF.resize(img, self.size, self.interpolation), TF.resize(lab, self.size, self.interpolation)
+        return TF.resize(img, self.size, self.interpolation), TF.resize(lab, self.size, Image.NEAREST)
 
     def __repr__(self):
         interpolate_str = _pil_interpolation_to_str[self.interpolation]
